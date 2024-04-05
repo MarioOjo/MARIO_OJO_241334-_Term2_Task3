@@ -1,12 +1,10 @@
-/* Resetting default styles */
-* {
+ *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url(//assets/images/headerbackBack.png);
 }
 
-/* Fonts */
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -18,13 +16,6 @@ body {
 .poppins-regular {
   font-weight: 400;
 }
-body {
-  background-image: url(../assets/images/homePageHeader.png);
-  background-repeat: no-repeat;
-  background-attachment: fixed;  
-  background-size: cover;
-}
-
 .topNav {
   width: 50%;
   height: 100px;
@@ -32,20 +23,20 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #dfd2d2; /* Added background color */
-  border-radius: 50px; /* Fixed border radius property */
+  background-color: #dfd2d2; 
+  border-radius: 50px; 
   margin: 10px;
   margin-left: 500px;
   padding:0 20px ;
 }
 
 .navFlex img {
-  height: 49px; /* Added unit */
+  height: 49px; 
   width: 266px;
 }
 
 .navFlex a {
-  padding: 0 20px; /* Adjusted padding */
+  padding: 0 20px; 
   color: grey;
   font-size: 18px;
 }
@@ -60,8 +51,8 @@ body {
 }
 
 .search-container input[type="text"] {
-  padding: 8px; /* Adjusted padding */
-  border: 1px solid black; /* Added solid keyword */
+  padding: 8px; 
+  border: 1px solid black; 
   border-radius: 40px;
   font-size: 18px;
 }
@@ -76,23 +67,23 @@ body {
     width: 100%;
   }
   .topNav input[type="text"] {
-    border: 2px solid #d81414; /* Fixed border declaration */
+    border: 2px solid #d81414;
   }
 }
 
-/* Flex container */
+
 .flexContainer {
   padding: 10px;
   display: flex;
-  justify-content: right; /* Adjusted alignment */
-  align-items: right; /* Adjusted alignment */
+  justify-content: right; 
+  align-items: right; 
   width: 100%;
 }
 
-/* Flex item */
+
 .flexItem {
   padding: 2em;
-  flex: 50px; /* Adjusted flex value */
+  flex: 50px; 
   background: white;
   text-align: right;
 }
@@ -102,7 +93,6 @@ body {
   height: 477px;
 }
 
-/* Footer */
 footer {
   background-color: #333;
   color: #fff;
@@ -129,29 +119,49 @@ footer {
 
 }
 
-/* Test container */
+
 .testContainer {
   display: flex;
   justify-content: center;
-  align-items: right; /* Adjusted alignment */
+  align-items: right;
   flex-direction: row;
 }
 
-.testItem1,
+.testItem1{
+  background-color:purple;
+}
 .testItem2,
 .testItem3 {
   flex: 50%;
   padding: 3em;
   height: 450px;
   width: 100%;
-  background-color:rgb(49, 7, 49);
+  background-color:white;
+  text-align: left;
 }
 
-.testItem1 img,
-.testItem2 img,
+.testItem1 img{
+  margin: 2em;
+  margin-bottom: 20px;
+  padding: 0.42em;
+  width: 477px;
+  height: 417px; 
+  padding-bottom: 4em;
+}
+
+
+.testItem2 img{
+  float: right;
+  width: 477px;
+  height: 417px;  
+ margin-top: 1em ;
+ padding-bottom: 4em;
+  margin: auto;
+}
+
 .testItem3 img {
-  width: 609px;
-  height: 649px; /* Adjusted height */
+  width: 509px;
+  height: 549px; 
   margin-right: 5px;
   border-radius: 5px;
 }
@@ -166,12 +176,12 @@ body {
 .flexRight2 {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end; /* Adjusted alignment */
+  align-items: flex-end; 
   padding: 0 4em;
 }
 
 .formContainer {
-  width: 100%; /* Adjusted width */
+  width: 100%; 
   max-width: 500px;
   margin: 0 auto;
   position: relative;
@@ -205,7 +215,7 @@ body {
 }
 
 fieldset {
-  border: none; /* Removed unnecessary border */
+  border: none; 
   margin: 10px;
   padding: 30px;
   
@@ -214,8 +224,8 @@ fieldset {
 #contact input, 
 #contact textarea {
   width: 100%;
-  border: 1px solid #ccc; /* Corrected border syntax */
-  background-color: #f3f3f3; /* Corrected background-color property */
+  border: 1px solid #ccc; 
+  background-color: #f3f3f3; 
   margin: 0 0 5px;
   padding: 20px;
   color: #000000;
@@ -226,7 +236,7 @@ fieldset {
 
 #contact textarea {
   height: 100px;
-  max-width: 100%; /* Corrected max-width syntax */
+  max-width: 100%;
   resize: none;
   height: 200px;
 }
@@ -340,4 +350,33 @@ justify-content: center;
   align-items: self-start;
 }
 
+* {
+  box-sizing: border-box;
+}
 
+.ContainerizeRow{
+float: left;
+padding: 5em;
+margin: 2p
+}
+.row{
+align-items: end;
+text-align: right;
+
+}
+.RowColumn img{
+padding: 2em;
+margin: 1px;
+height: 278px;
+width: 278px;
+
+
+}
+/* Add CSS styles here */
+.testContainer {
+  margin-bottom: 20px; /* Adjust this value as needed */
+}
+
+footer {
+  margin-top: 20px; /* Adjust this value as needed */
+}
