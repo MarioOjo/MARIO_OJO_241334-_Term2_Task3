@@ -372,11 +372,93 @@ width: 278px;
 
 
 }
-/* Add CSS styles here */
+/* Existing styles */
 .testContainer {
-  margin-bottom: 20px; /* Adjust this value as needed */
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-footer {
-  margin-top: 20px; /* Adjust this value as needed */
+.testItem2 {
+  flex: 1;
+}
+
+.flexTestColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testcolItem {
+  margin: 10px 0;
+}
+
+.testcolItem p {
+  margin: 10px 0; 
+}
+
+
+.gallerySection {
+  background-color: purple; 
+  text-align: center;
+  padding: 50px 20px;
+  color: white; 
+  font-family: 'Poppins', sans-serif; 
+}
+
+.mainHeading h4 {
+  font-size: 1.8em; 
+  margin-bottom: 20px; 
+  color: rgb(7, 152, 201);
+}
+
+.mainHeading h1 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.imageGallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.galleryItem {
+  flex: 1;
+  max-width: 200px;
+  margin: 20px;
+}
+
+.galleryItem img {
+  width: 278px; 
+  height: 278px
+}
+
+.galleryItem h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.galleryItem p {
+  font-size: 1em;
+}
+
+.buttonContainer {
+  margin-top: 40px;
+}
+
+.bookButton {
+  background-color:  red;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-family: 'Poppins', sans-serif; 
+}
+
+.bookButton:hover {
+  background-color: purple;
 }
