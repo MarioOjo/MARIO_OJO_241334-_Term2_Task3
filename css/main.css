@@ -1,12 +1,12 @@
- *{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
 body {
   font-family: "Poppins", sans-serif;
+  margin: 0;
 }
 
 .poppins-semibold {
@@ -16,62 +16,91 @@ body {
 .poppins-regular {
   font-weight: 400;
 }
+
+.headerSection {
+  background: url(//assets/images/homePageHeader.png) no-repeat center center;
+  background-size: cover;
+  padding: 20px 0;
+}
+
 .topNav {
   width: 50%;
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #dfd2d2; 
-  border-radius: 50px; 
-  margin: 10px;
-  margin-left: 500px;
-  padding:0 20px ;
+  background-color: rgba(223, 210, 210, 0.9); /* Semi-transparent background */
+  border-radius: 50px;
+  margin: 10px auto; /* Center the nav horizontally */
+  padding: 0 20px;
 }
 
 .navFlex img {
-  height: 49px; 
+  height: 49px;
   width: 266px;
 }
 
 .navFlex a {
-  padding: 0 20px; 
+  padding: 0 20px;
   color: grey;
   font-size: 18px;
 }
-.navFlex a:hover{
+
+.navFlex a:hover {
   opacity: 80%;
   cursor: pointer;
   color: #d81414;
-
 }
+
 .search-container {
-  float: right;
+  display: flex;
+  align-items: center;
 }
 
 .search-container input[type="text"] {
-  padding: 8px; 
-  border: 1px solid black; 
+  padding: 8px;
+  border: 1px solid black;
   border-radius: 40px;
   font-size: 18px;
 }
 
-@media screen and (max-width: 600px) {
-  .search-container {
-    float: none;
-  }
-  .topNav a,
-  .topNav input[type="text"],
-  .topNav .search-container {
-    width: 100%;
-  }
-  .topNav input[type="text"] {
-    border: 2px solid #d81414;
-  }
+.search-container button {
+  padding: 8px 12px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
 }
 
+.search-container button:hover {
+  background-color: #666;
+}
 
+@media screen and (max-width: 600px) {
+  .topNav {
+      flex-direction: column;
+      align-items: stretch;
+      height: auto;
+  }
+
+  .navFlex {
+      justify-content: center;
+      margin: 10px 0;
+  }
+
+  .search-container {
+      width: 100%;
+      justify-content: center;
+  }
+
+  .topNav input[type="text"] {
+      width: calc(100% - 40px);
+      border: 2px solid #d81414;
+  }
+}
 .flexContainer {
   padding: 10px;
   display: flex;
