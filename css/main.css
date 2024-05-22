@@ -18,10 +18,11 @@ body {
 }
 
 .headerSection {
-  background: url('assets/images/flighhtMars.png') no-repeat center center;
+  background-image: url(..//assets/images/flighhtMars.png) no-repeat center center;
   background-size: cover;
   padding: 20px 0;
 }
+
 
 .topNav {
   width: 50%;
@@ -62,21 +63,6 @@ body {
   border: 1px solid black;
   border-radius: 40px;
   font-size: 18px;
-}
-
-.search-container button {
-  padding: 8px 12px;
-  background-color: #555;
-  color: white;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  font-size: 18px;
-  margin-left: 10px;
-}
-
-.search-container button:hover {
-  background-color: #666;
 }
 
 @media screen and (max-width: 600px) {
@@ -196,13 +182,6 @@ footer {
   margin-right: 5px;
   border-radius: 5px;
 }
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
 
 .flexRight2 {
   display: flex;
@@ -318,7 +297,7 @@ fieldset {
 
 .flexRow {
   display: flex;
-  justify-content: space-between; /* Align items evenly */
+  justify-content: space-between; 
   margin-bottom: 30px;
 }
 
@@ -328,18 +307,19 @@ fieldset {
 
 .flexColtem {
   padding: 20px;
-  background-color: #fff; /* White background */
+  background-color: #fff; 
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  
 }
 
 .flight-info {
-  display: flex; /* Use flexbox to align flight information */
-  align-items: center; /* Vertically center content */
+  display: flex; 
+  align-items: center; 
 }
 
 .flight-info .flexCol {
-  flex: 1; /* Take up remaining space */
+  flex: 1; 
 }
 
 .ratings {
@@ -352,28 +332,28 @@ fieldset {
 .separator {
   width: 1px;
   height: 20px;
-  background-color: grey; /* Set separator color to grey */
+  background-color: grey; 
   margin: 0 10px;
 }
 .line {
   width: 100%;
   border-top: 1px solid grey;
-  background-color: grey; /* Set separator color to grey */
+  background-color: grey; 
   margin:  20px 0;
 }
 
 .reviews {
-  color: grey; /* Set reviews text color to grey */
+  color: grey; 
   font-size: 14px;
 }
 
 .price {
-  color: grey; /* Set price color to grey */
+  color: grey; 
 }
 
 .discounted-price {
-  text-decoration: line-through; /* Add line-through effect */
-  color: grey; /* Set discounted price color to grey */
+  text-decoration: line-through; 
+  color: grey; 
 }
 
 .purple-button {
@@ -396,7 +376,7 @@ fieldset {
   background-color: red;
   color: white;
   border: none;
-  padding: 10px 30px; /* Increased padding to increase length */
+  padding: 10px 30px; 
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
@@ -408,16 +388,16 @@ fieldset {
 
 
 .details {
-    color: grey; /* Grey text color */
+    color: grey; 
 }
 
 .details p {
-    margin: 5px 0; /* Add space between details */
+    margin: 5px 0; 
 }
 
 .detail-label {
-    font-weight: bold; /* Make labels bold */
-    margin-right: 5px; /* Add space after labels */
+    font-weight: bold; 
+    margin-right: 5px; 
 }
 
 .flexRow {
@@ -446,10 +426,6 @@ justify-content: center;
 }
 .image {
   align-items: self-start;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .ContainerizeRow{
@@ -600,4 +576,10 @@ width: 278px;
   object-fit: cover;
   z-index: -1; /* Ensure the image is behind the content */
   opacity: 0.5; /* Adjust the opacity of the image */
+}
+body {
+  background-image: url('img_girl.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
 }
