@@ -16,39 +16,39 @@
     
 
         <title>Index </title>
-        
-        <!--Bootstrap, Javascript, Google Fonts, CSS-->
         <link rel="stylesheet" href="css/main.css">
        
 
     </head>
     <body>
     
-            
-                       
-                       
-      <div class="headerSection">
-        
-        <nav>
-            <div class="topNav">
-                <div class="navFlex logo">
-                    <img src="assets/images/logo.png" height="48px" width="266px" alt="Logo">
-                </div>
-                <div class="navFlex">
-                    <a href="index.html">Home</a>
-                    <a href="pages/flights.html">Flights</a>
-                    <a href="pages/contact.html">Contact</a>
-                </div>
-                <div class="navFlex">
-                    <div class="search-container">
-                        <form action="/search">
-                            <input type="text" placeholder="Search.." name="search">
-                        </form>
+        <section class="imgTextOverlay">
+            <img src="assets/images/homePageHeader.png" alt="Home Page Header">
+            <div class="bottomLeft"><h1>RED PLANET VENTURES</h1></div>
+            <div class="bottomLeft2">EXPLORE THE SOLAR SYSTEM</div>
+        </section>
+        <div class="headerSection">
+            <nav>
+                <div class="topNav">
+                    <div class="navFlex logo">
+                        <img src="assets/images/logo.png" height="48" width="266" alt="Logo">
+                    </div>
+                    <div class="navFlex">
+                        <a href="index.html">Home</a>
+                        <a href="pages/flights.html">Flights</a>
+                        <a href="pages/contact.html">Contact</a>
+                    </div>
+                    <div class="navFlex">
+                        <div class="search-container">
+                            <form action="/search">
+                                <input type="text" placeholder="Search.." name="search">
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </div>
+            </nav>
+        </div>
+ 
 
               <div class="testContainer">
     <div class="testItem1">
@@ -127,7 +127,32 @@
                   <button class="bookButton">Book a Trip Now</button>
                 </div>
               </section>
+
+
+
+
+              <div class="column right-column">
+                <p>Social Media Links</p>
+                <div class="slider">
+                    <div class="slides">
+                        <div class="slide"><img src="assets/images/smFacebook.png" height="77" width="77" alt="Facebook"></div>
+                        <div class="slide"><img src="assets/images/smX.png" height="77" width="77" alt="X"></div>
+                        <div class="slide"><img src="assets/images/smTicktock.png" height="77" width="77" alt="Ticktock"></div>
+                        <div class="slide"><img src="assets/images/smInstagram.png" height="77" width="77" alt="Instagram"></div>
+                    </div>
+                    <button class="prev" onclick="prevSlide()">&#10094;</button>
+                    <button class="next" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
+
+            
+
+
+
             <script src="script.js"></script>
+
+
+      
         
             <footer>
                 <div class="column left-column">
