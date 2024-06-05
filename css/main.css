@@ -7,9 +7,6 @@
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
 }
 
 .poppins-semibold {
@@ -18,6 +15,12 @@ body {
 
 .poppins-regular {
   font-weight: 400;
+}
+
+.headerSection {
+  background-image: url(..//assets/images/flighhtMars.png) no-repeat center center;
+  background-size: cover;
+  padding: 20px 0;
 }
 
 
