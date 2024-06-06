@@ -577,9 +577,49 @@ width: 278px;
   z-index: -1; /* Ensure the image is behind the content */
   opacity: 0.5; /* Adjust the opacity of the image */
 }
-body {
-  background-image: url('img_girl.jpg');
+@font-face {
+  font-family: 'porter-sans';
+  src: url('../assets/font/porter_sans_block/porter-sans-inline-block-webfont.woff') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins-Bold';
+src:url('../assets/font/Poppins/Poppins-Bold.ttf') format('truetype');
+}
+.imgTextOverlay {
+  position: relative;
+  text-align: center;
+  color: #ccc;
+}
+
+.imgTextOverlay img {
+  width: 100%;
+  background-image: url('../assets/images/headerbackBack.png');
   background-repeat: no-repeat;
-  background-attachment: fixed;  
   background-size: cover;
+}
+.bottomLeft {
+  position: absolute;
+  bottom: 58px;
+  left: 16px;
+  font-family: 'porter-sans';
+  font-size: 48px;
+  color: #d81414;
+  letter-spacing: 0.5em;
+  text-align: left;
+}
+
+.bottomLeft2 {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-family: 'Poppins-Bold' ;
+  font-size: 48px;
+  color: rgb(56, 8, 56);
+}
+
+.headerSection {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
