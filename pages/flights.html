@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/main.css">
     
     <title>Flights</title>
+    
 </head>
 <body>
 
@@ -26,6 +27,7 @@
                 </div>
                 <div class="navFlex">
                     <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
                     <a class="active" href="flights.html">Flights</a>
                     <a href="contact.html">Contact</a>
                 </div>
@@ -39,7 +41,7 @@
                         </div>
                         <div class="separator"></div>
                         <div class="cart-container">
-                            <a href="/cart">
+                            <a href="javascript:void(0);" onclick="openModal()">
                                 <i class="fas fa-shopping-basket"></i>
                                 <span class="cart-badge">2</span>
                             </a>
@@ -47,14 +49,43 @@
                     </div>
                 </nav>
             </div>
+        </nav>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Shopping Cart</h2>
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="cart-item">
+                    <span>Classic Mars Experience</span>
+                    <input type="number" value="1" min="1" onchange="updateTotal()">
+                    <span class="item-price" data-price="25000">R 25,000.00</span>
+                </div>
+                <div class="cart-item">
+                    <span>Neptune’s Cosmic Dive</span>
+                    <input type="number" value="1" min="1" onchange="updateTotal()">
+                    <span class="item-price" data-price="45000">R 45,000.00</span>
+                </div>
+                <hr>
+                <div class="cart-total">
+                    <strong>Total: R <span id="cartTotal">70,000.00</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal()">Continue Shopping</button>
+                <button onclick="checkOut()">Check Out</button>
+            </div>
         </div>
     </div>
-</nav>
-</div>
-    
+
+    <!-- Product Sections -->
     <div class="flexRow">
         <div class="flexRowItem">
-            <img src="../assets/images/flighhtMars.png" height="609px" width=" 477px">
+            <img src="../assets/images/flighhtMars.png" height="609px" width="477px">
         </div>
         <div class="flexRowItem">
             <div class="flexCol">
@@ -244,8 +275,6 @@
       <img src="../assets/images/flightMoon.png" height="609px" width=" 477px" >
   </div>
 
-
-  
   <div class="flexRowItem">
       <div class="flexCol">
           <div class="flexColtem">
@@ -283,6 +312,42 @@
 </div>
 </div>
 
+
+<!-- View Cart Button -->
+<button class="view-cart-btn" onclick="openModal()">View Cart</button>
+
+<!-- Modal Structure -->
+<div id="cartModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Your Cart</h2>
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="cart-item">
+                <span>Moonlight Meander</span>
+                <input type="number" value="1" class="item-quantity" onchange="updateTotal()">
+                <span class="item-price">R 15,000.00</span>
+            </div>
+            <div class="cart-item">
+                <span>Mars Adventure</span>
+                <input type="number" value="1" class="item-quantity" onchange="updateTotal()">
+                <span class="item-price">R 20,000.00</span>
+            </div>
+            <div class="cart-item">
+                <span>Venus Voyage</span>
+                <input type="number" value="1" class="item-quantity" onchange="updateTotal()">
+                <span class="item-price">R 25,000.00</span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <h3>Total: <span id="cartTotal">R 60,000.00</span></h3>
+            <button class="purple-button" onclick="closeModal()">Continue Shopping</button>
+            <button class="red-button" onclick="checkout()">Check Out</button>
+        </div>
+    </div>
+</div>
+
 <footer>
     <div class="column left-column">
         <img src="../assets/images/logo.png" alt="Image" height="500px" width=" 400px" >
@@ -310,7 +375,37 @@
     </div>
 </footer>
 
+<script>
+    function openModal() {
+        document.getElementById('cartModal').style.display = 'flex';
+        updateTotal();
+    }
+
+    function closeModal() {
+        document.getElementById('cartModal').style.display = 'none';
+    }
+
+    function updateTotal() {
+        const cartItems = document.querySelectorAll('.cart-item');
+        let total = 0;
+        cartItems.forEach(item => {
+            const price = parseFloat(item.querySelector('.item-price').textContent.replace('R', ''));
+            const quantity = parseInt(item.querySelector('.item-quantity').value);
+            total += price * quantity;
+        });
+        document.getElementById('cartTotal').textContent = 'R ' + total.toFixed(2);
+    }
+
+    function updateCartItem(button, delta) {
+        const quantityInput = button.parentElement.querySelector('.item-quantity');
+        let quantity = parseInt(quantityInput.value);
+        quantity = isNaN(quantity) ? 0 : quantity;
+        quantity += delta;
+        if (quantity < 1) quantity = 1;
+        quantityInput.value = quantity;
+        updateTotal();
+    }
+</script>
+
 </body>
 </html>
-
-

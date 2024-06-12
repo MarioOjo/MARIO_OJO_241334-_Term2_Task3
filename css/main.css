@@ -631,6 +631,7 @@ src:url('../assets/font/Poppins/Poppins-Bold.ttf') format('truetype');
   width: 100%;
   background-image: url('../assets/images/headerbackBack.png');
   background-repeat: no-repeat;
+  background-attachment: fixed;  
   background-size: cover;
 }
 .bottomLeft {
@@ -652,68 +653,3 @@ src:url('../assets/font/Poppins/Poppins-Bold.ttf') format('truetype');
   font-size: 48px;
   color: rgb(56, 8, 56);
 }
-.center{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'porter-sans';
-  font-size: 48px;
-  color: #fff;
-}
-.headerSection {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 10;
- 
-}
-
-.carousel {
-    position: relative;
-    width: 70%;
-    max-width: 600px;
-    overflow: hidden;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 100%;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-item img {
-    width: 100%;
-    display: block;
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-    z-index: 1;
-}
-
-.carousel-control.prev {
-    left: 10px;
-}
-
-.carousel-control.next {
-    right: 10px;
-}
-
-
-
