@@ -8,6 +8,7 @@
     <meta name="author" content="Mario Ojo, 241334">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
     
     <title>Flights</title>
@@ -18,6 +19,7 @@
     <section class="imgTextOverlay">
         <img src="../assets/images/headerbackBack.png" alt="Home Page Header">
         <div class="center"><h1>BOOK A FLIGHT</h1></div>
+
     </section>
     <div class="headerSection">
         <nav>
@@ -27,60 +29,30 @@
                 </div>
                 <div class="navFlex">
                     <a href="../index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a class="active" href="flights.html">Flights</a>
+                    <a href="copy.html">About</a>
+                    <a href="flights.html">Flights</a>
                     <a href="contact.html">Contact</a>
                 </div>
                 <nav>
                     <div class="navFlex">
                         <div class="search-container">
-                            <form action="/search">
-                                <input type="text" placeholder="Search.." name="search">
+                            <form id="searchForm" action="javascript:void(0);">
+                                <input type="text" id="searchInput" placeholder="Search.." name="search">
                                 <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
                         <div class="separator"></div>
                         <div class="cart-container">
-                            <a href="javascript:void(0);" onclick="openModal()">
+                            <a href="/cart">
                                 <i class="fas fa-shopping-basket"></i>
                                 <span class="cart-badge">2</span>
                             </a>
                         </div>
                     </div>
                 </nav>
-            </div>
-        </nav>
-    </div>
-
-    <!-- Modal HTML -->
-    <div id="cartModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Shopping Cart</h2>
-                <span class="modal-close" onclick="closeModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="cart-item">
-                    <span>Classic Mars Experience</span>
-                    <input type="number" value="1" min="1" onchange="updateTotal()">
-                    <span class="item-price" data-price="25000">R 25,000.00</span>
                 </div>
-                <div class="cart-item">
-                    <span>Neptune’s Cosmic Dive</span>
-                    <input type="number" value="1" min="1" onchange="updateTotal()">
-                    <span class="item-price" data-price="45000">R 45,000.00</span>
-                </div>
-                <hr>
-                <div class="cart-total">
-                    <strong>Total: R <span id="cartTotal">70,000.00</span></strong>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button onclick="closeModal()">Continue Shopping</button>
-                <button onclick="checkOut()">Check Out</button>
             </div>
         </div>
-    </div>
 
     <!-- Product Sections -->
     <div class="flexRow">
@@ -396,16 +368,44 @@
         document.getElementById('cartTotal').textContent = 'R ' + total.toFixed(2);
     }
 
-    function updateCartItem(button, delta) {
-        const quantityInput = button.parentElement.querySelector('.item-quantity');
-        let quantity = parseInt(quantityInput.value);
-        quantity = isNaN(quantity) ? 0 : quantity;
-        quantity += delta;
-        if (quantity < 1) quantity = 1;
-        quantityInput.value = quantity;
-        updateTotal();
+   
+    
+
+
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        var searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+        if (searchQuery !== "") {
+            // Remove previous highlights
+            removeHighlights();
+            // Highlight new search terms
+            highlightSearchResults(searchQuery);
+        } else {
+            alert('Please enter a search term');
+        }
+    });
+
+    function removeHighlights() {
+        var highlightedElements = document.querySelectorAll('.highlight');
+        highlightedElements.forEach(function(element) {
+            element.classList.remove('highlight');
+            element.innerHTML = element.textContent; // Remove spans
+        });
+    }
+
+    function highlightSearchResults(searchQuery) {
+        var elements = document.querySelectorAll('h1, h3, p, div'); // Add more selectors if needed
+        elements.forEach(function(element) {
+            var innerHTML = element.innerHTML.toLowerCase();
+            if (innerHTML.includes(searchQuery)) {
+                var regex = new RegExp('(' + searchQuery + ')', 'gi');
+                element.innerHTML = element.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+            }
+        });
     }
 </script>
+
+
 
 </body>
 </html>

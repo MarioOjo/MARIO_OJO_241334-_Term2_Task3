@@ -23,7 +23,7 @@
     <section class="imgTextOverlay">
         <img src="../assets/images/headerbackBack.png" alt="Home Page Header">
         <div class="center"><h1>CONTACT US</h1></div>
-
+       
     </section>
     <div class="headerSection">
         <nav>
@@ -33,29 +33,30 @@
                 </div>
                 <div class="navFlex">
                     <a href="../index.html">Home</a>
-                    <a href="about.html">About</a>
+                    <a href="contact.html">About</a>
                     <a href="flights.html">Flights</a>
-                    <a class="active" href="contact.html">Contact</a>
+                    <a href="contact.html">Contact</a>
                 </div>
-                <div class="navFlex">
-                    <div class="search-container">
-                        <form action="/search">
-                            <input type="text" placeholder="Search.." name="search">
-                            <button type="submit"><i class="fas fa-search"></i></button>
+                <nav>
+                    <div class="navFlex">
+                        <div class="search-container">
+                            <form id="searchForm" action="javascript:void(0);">
+                                <input type="text" id="searchInput" placeholder="Search.." name="search">
+                                <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
-                            </div>
-                            <div class="separator"></div>
-                            <div class="cart-container">
+                        </div>
+                        <div class="separator"></div>
+                        <div class="cart-container">
                             <a href="/cart">
-                            <i class="fas fa-shopping-basket"></i>
-                            <span class="cart-badge">2</span>
-                        </a>
+                                <i class="fas fa-shopping-basket"></i>
+                                <span class="cart-badge">2</span>
+                            </a>
+                        </div>
                     </div>
+                </nav>
                 </div>
             </div>
         </div>
-    </nav>
-</div>
 
 
 
@@ -156,6 +157,39 @@
     <p>All Rights Reserved @ Open Window 2024</p>
     <p>Terms & Conditions | Privacy & Policy</p>
 </footer>
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        var searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+        if (searchQuery !== "") {
+            // Remove previous highlights
+            removeHighlights();
+            // Highlight new search terms
+            highlightSearchResults(searchQuery);
+        } else {
+            alert('Please enter a search term');
+        }
+    });
+
+    function removeHighlights() {
+        var highlightedElements = document.querySelectorAll('.highlight');
+        highlightedElements.forEach(function(element) {
+            element.classList.remove('highlight');
+            element.innerHTML = element.textContent; // Remove spans
+        });
+    }
+
+    function highlightSearchResults(searchQuery) {
+        var elements = document.querySelectorAll('h1, h3, p, div'); // Add more selectors if needed
+        elements.forEach(function(element) {
+            var innerHTML = element.innerHTML.toLowerCase();
+            if (innerHTML.includes(searchQuery)) {
+                var regex = new RegExp('(' + searchQuery + ')', 'gi');
+                element.innerHTML = element.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+            }
+        });
+    }
+</script>
 
 </body>
 </html>

@@ -30,6 +30,36 @@ function updateTotal() {
     document.getElementById('cartTotal').textContent = 'R ' + total.toFixed(2);
 }
 
-function checkout() {
-    window.location.href = 'index.html';
+
+
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    var searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
+    if (searchQuery !== "") {
+        // Remove previous highlights
+        removeHighlights();
+        // Highlight new search terms
+        highlightSearchResults(searchQuery);
+    } else {
+        alert('Please enter a search term');
+    }
+});
+
+function removeHighlights() {
+    var highlightedElements = document.querySelectorAll('.highlight');
+    highlightedElements.forEach(function(element) {
+        element.classList.remove('highlight');
+        element.innerHTML = element.textContent; // Remove spans
+    });
+}
+
+function highlightSearchResults(searchQuery) {
+    var elements = document.querySelectorAll('h1, h3, p, div'); // Add more selectors if needed
+    elements.forEach(function(element) {
+        var innerHTML = element.innerHTML.toLowerCase();
+        if (innerHTML.includes(searchQuery)) {
+            var regex = new RegExp('(' + searchQuery + ')', 'gi');
+            element.innerHTML = element.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+        }
+    });
 }
