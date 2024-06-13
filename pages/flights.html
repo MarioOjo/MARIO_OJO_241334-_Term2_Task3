@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="HTML, CSS, Template, Bootstrap">
     <meta name="author" content="Mario Ojo, 241334">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -19,8 +19,50 @@
     <section class="imgTextOverlay">
         <img src="../assets/images/headerbackBack.png" alt="Home Page Header">
         <div class="center"><h1>BOOK A FLIGHT</h1></div>
-
     </section>
+    
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <h2>Filter Flights</h2>
+        <form id="filterForm">
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <select id="destination" class="form-control">
+                    <option value="">All</option>
+                    <option value="Mars">Mars</option>
+                    <option value="Neptune">Neptune</option>
+                    <option value="Jupiter">Jupiter</option>
+                    <option value="Saturn">Saturn</option>
+                    <option value="Uranus">Uranus</option>
+                    <option value="Moon">Moon</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="priceRange">Price Range</label>
+                <select id="priceRange" class="form-control">
+                    <option value="">All</option>
+                    <option value="0-20000">R 0 - R 20,000</option>
+                    <option value="20001-40000">R 20,001 - R 40,000</option>
+                    <option value="40001-60000">R 40,001 - R 60,000</option>
+                    <option value="60001-80000">R 60,001 - R 80,000</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tags">Tags</label>
+                <select id="tags" class="form-control">
+                    <option value="">All</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Romantic">Romantic</option>
+                    <option value="Gourmet">Gourmet</option>
+                    <option value="Sale">Sale</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Apply Filter</button>
+        </form>
+    </div>
+
     <div class="headerSection">
         <nav>
             <div class="topNav">
@@ -31,7 +73,7 @@
                     <a href="../index.html">Home</a>
                     <a href="copy.html">About</a>
                     <a href="flights.html">Flights</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="./contact.html">Contact</a>
                 </div>
                 <nav>
                     <div class="navFlex">
@@ -50,362 +92,336 @@
                         </div>
                     </div>
                 </nav>
-                </div>
             </div>
-        </div>
+        </nav>
+    </div>
 
     <!-- Product Sections -->
-    <div class="flexRow">
-        <div class="flexRowItem">
-            <img src="../assets/images/flighhtMars.png" height="609px" width="477px">
-        </div>
-        <div class="flexRowItem">
-            <div class="flexCol">
-                <div class="flexColtem">
-                    <h1>The Classic Mars Experience</h1>
-                    <div class="ratings">
-                        <p class="ratings">★★★★☆ </p>
-                        <div class="separator"></div>
-                        <p class="reviews"> 36 Customer Reviews</p>
-                    </div>
-                    <h3>
-                        <span class="price">R 25,000.00</span>
-                        <span class="discounted-price">R 50,000.00</span>
-                    </h3>
-                    <p>Embark on a Mars vacation; red deserts, ancient relics, and towering 
-                        canyons await. Enjoy low-gravity hiking, roving trips to Olympus Mons, and
-                         stargazing under Phobos and Deimos. Unforgettable adventures beckon 
-                         on the rust coloured landscapes of the Red Planet.</p>
-                    <div class="flexColItem">
-                        <button class="purple-button" name="button" type="button">- 1 +</button>
-                        <button class="red-button" name="button" type="button">Book Now</button>
+    <div id="flightsContainer">
+        <!-- Mars Flight -->
+        <div class="flexRow" data-destination="Mars" data-price="25000" data-tags="Luxury,Sale">
+            <div class="flexRowItem">
+                <img src="../assets/images/flighhtMars.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>The Classic Mars Experience</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 36 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 25,000.00</span>
+                            <span class="discounted-price">R 50,000.00</span>
+                        </h3>
+                        <p>Embark on a Mars vacation; red deserts, ancient relics, and towering 
+                            canyons await. Enjoy low-gravity hiking, roving trips to Olympus Mons, and
+                             stargazing under Phobos and Deimos. Unforgettable adventures beckon 
+                             on the rust coloured landscapes of the Red Planet.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button">- 1 +</button>
+                            <button class="red-button" name="button" type="button">Book Now</button>
 
-                        <div class="line"></div>
+                            <div class="line"></div>
 
-                        <div class="details">
-                            <p><span class="detail-label">SKU:</span> SS001</p>
-                            <p><span class="detail-label">Shuttle:</span> The Opulence</p>
-                            <p><span class="detail-label">Tags:</span> Mars,Luxury, Sale</p>
-                            <p><span class="detail-label">Date:</span> 16 June-19 July</p>
-                            
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS001</p>
+                                <p><span class="detail-label">Shuttle:</span> The Opulence</p>
+                                <p><span class="detail-label">Tags:</span> Mars, Luxury, Sale</p>
+                                <p><span class="detail-label">Date:</span> 16 June-19 July</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-<div class="flexRow">
-    <div class="flexRowItem">
-        <img src="../assets/images/flightNeptune.png" height="609px" width=" 477px">
-    </div>
-    <div class="flexRowItem">
-        <div class="flexCol">
-            <div class="flexColtem">
-                <h1>Neptune’s Cosmic Dive</h1>
-                <div class="ratings">
-                    <p class="ratings">★★★★ </p>
-                    <div class="separator"></div>
-                    <p class="reviews"> 24 Customer Reviews</p>
-                </div>
-                <h3>
-                    <span class="price">R 45,000.00</span>
-                    
-                </h3>
-                <p>Embark on a voyage to Neptune aboard the "Neptune Voyager." Witness surreal vistas of swirling clouds and rings. Experience weightlessness and explore frigid oceans. Engage in thrilling spacewalks, observe celestial phenomena, and savor gourmet space cuisine. An unforgettable adventure awaits, blending luxury with cosmic exploration.</p>
-                <div class="flexColItem">
-                    <button class="purple-button" name="button" type="button">- 1 +</button>
-                    <button class="red-button" name="button" type="button">Book Now</button>
-                    <div class="line"></div>
+        <!-- Neptune Flight -->
+        <div class="flexRow" data-destination="Neptune" data-price="40000" data-tags="Adventure,Romantic">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightNeptune.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Neptune's Deep Blue Voyage</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 28 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 40,000.00</span>
+                            <span class="discounted-price">R 55,000.00</span>
+                        </h3>
+                        <p>Explore the mysteries of Neptune with an exhilarating journey through its icy rings and majestic blue atmosphere. Perfect for adventure seekers and romantic escapades.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button">- 1 +</button>
+                            <button class="red-button" name="button" type="button">Book Now</button>
 
-                    <div class="details">
-                        <p><span class="detail-label">SKU:</span> SS405</p>
-                        <p><span class="detail-label">Shuttle:</span> The Voyager</p>
-                        <p><span class="detail-label">Tags:</span> Neptune,Commercial,Gourmet Experience</p>
-                        <p><span class="detail-label">Date:</span> 4 April - 28 March</p>
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS002</p>
+                                <p><span class="detail-label">Shuttle:</span> The Voyager</p>
+                                <p><span class="detail-label">Tags:</span> Neptune, Adventure, Romantic</p>
+                                <p><span class="detail-label">Date:</span> 10 August-15 September</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="flexRow">
-  <div class="flexRowItem">
-      <img src="../assets/images/flightJupiter.png" height="609px" width=" 477px" >
-  </div>
-  <div class="flexRowItem">
-      <div class="flexCol">
-          <div class="flexColtem">
-              <h1>The Giant’s Journey</h1>
-              <div class="ratings">
-                <p class="ratings">★★★★☆ </p>
-                <div class="separator"></div>
-                <p class="reviews"> 36 Customer Reviews</p>
+        <!-- Jupiter Flight -->
+        <div class="flexRow" data-destination="Jupiter" data-price="35000" data-tags="Commercial,Adventure">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightJupiter.png" height="609px" width="477px">
             </div>
-              <h3>R 65,000.00</h3>
-              <p>Embark on a Jupiter voyage aboard the "Jupiter Odyssey." Witness its 
-                majestic storms and swirling atmosphere. Dive into metallic hydrogen 
-                oceans. Explore its moons, each a world unto itself. Engage in gravity 
-                surfing, comet chasing, and space excursions. Experience cosmic wonder 
-                in luxury, blending exploration with adventure</p>
-                <div class="flexColItem">
-                    <button class="purple-button" name="button" type="button">- 1 +</button>
-                    <button class="red-button" name="button" type="button">Book Now</button>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Jupiter's Giant Adventure</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 32 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 35,000.00</span>
+                            <span class="discounted-price">R 45,000.00</span>
+                        </h3>
+                        <p>Take a commercial flight to Jupiter and witness the grandeur of the largest planet in our solar system. This adventure includes flybys of the Great Red Spot and visits to its many moons.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button">- 1 +</button>
+                            <button class="red-button" name="button" type="button">Book Now</button>
 
-                    <div class="line"></div>
+                            <div class="line"></div>
 
-                    <div class="details">
-                        <p><span class="detail-label">SKU:</span> SS606</p>
-                        <p><span class="detail-label">Shuttle:</span> The Odyssey</p>
-                        <p><span class="detail-label">Tags:</span> Jupiter, Luxury,Adventure</p>
-                        <p><span class="detail-label">Date:</span> 15 June - 30 July</p>
-                    </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-
-<div class="flexRow">
-  <div class="flexRowItem">
-      <img src="../assets/images/flightSaturn.png" height="609px" width=" 477px" >
-  </div>
-  <div class="flexRowItem">
-      <div class="flexCol">
-          <div class="flexColtem">
-              <h1>Ring Around a Saturn </h1>
-              <div class="ratings">
-                <p class="ratings">★★★★★ </p>
-                <div class="separator"></div>
-                <p class="reviews"> 16 Customer Reviews</p>
-            </div>
-              <h3>R 40,000.00</h3>
-              <p>Embark on a thrilling voyage to Saturn aboard the "Saturn Explorer." 
-                Marvel at its iconic rings and turbulent storms. Explore its diverse moons, 
-                from icy Enceladus to mysterious Titan, with activities including rover 
-                expeditions and cave exploration. Experience the wonders of the cosmos 
-                amidst luxurious accommodations, where the thrill of discovery 
-                intertwines seamlessly with the excitement of adventure.<p>
-                  <div class="flexColItem">
-                    <button class="purple-button" name="button" type="button">- 1 +</button>
-                    <button class="red-button" name="button" type="button">Book Now</button>
-
-                    <div class="line"></div>
-
-                    <div class="details">
-                        <p><span class="detail-label">SKU:</span> SS333</p>
-                        <p><span class="detail-label">Shuttle:</span> The Explorer</p>
-                        <p><span class="detail-label">Tags:</span> Saturn,Luxury,Adventure</p>
-                        <p><span class="detail-label">Date:</span> 4 April - 28 March</p>
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS003</p>
+                                <p><span class="detail-label">Shuttle:</span> The Titan</p>
+                                <p><span class="detail-label">Tags:</span> Jupiter, Commercial, Adventure</p>
+                                <p><span class="detail-label">Date:</span> 1 September-30 October</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-          </div>
-      </div>
-  </div>
-</div>
-
-<div class="flexRow">
-  <div class="flexRowItem">
-      <img src="../assets/images/flightUranus.png" height="609px" width=" 477px" >
-  </div>
-  <div class="flexRowItem">
-      <div class="flexCol">
-          <div class="flexColtem">
-              <h1>Uranus Uncharted</h1>
-              <div class="ratings">
-                <p class="ratings">★★★★☆ </p>
-                <div class="separator"></div>
-                <p class="reviews"> 12 Customer Reviews</p>
             </div>
-              <h3>R R 50,000.00</h3>
-              <p>Embark on a cosmic adventure to Uranus with our "Uranus Unveiled" tour. 
-                Explore its icy atmosphere and captivating moons. Experience thrilling 
-                zero-gravity excursions, witness mesmerizing auroras, and immerse 
-                yourself in celestial photography workshops. With luxury 
-                accommodations and expert guides, discover the wonders of Uranus in a 
-                journey of a lifetime.</p>
-                <div class="flexColItem">
-                    <button class="purple-button" name="button" type="button">- 1 +</button>
-                    <button class="red-button" name="button" type="button">Book Now</button>
+        </div>
 
-                    <div class="line"></div>
+        <!-- Saturn Flight -->
+        <div class="flexRow" data-destination="Saturn" data-price="45000" data-tags="Luxury,Gourmet">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightSaturn.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Saturn's Ringed Splendor</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 40 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 45,000.00</span>
+                            <span class="discounted-price">R 60,000.00</span>
+                        </h3>
+                        <p>Experience the luxury of Saturn's spectacular rings and indulge in gourmet dining aboard our state-of-the-art shuttle. A perfect blend of elegance and exploration.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button">- 1 +</button>
+                            <button class="red-button" name="button" type="button">Book Now</button>
 
-                    <div class="details">
-                        <p><span class="detail-label">SKU:</span> SS735</p>
-                        <p><span class="detail-label">Shuttle:</span> The Endeavour</p>
-                        <p><span class="detail-label">Tags:</span> Uranus,workshop,Adventure</p>
-                        <p><span class="detail-label">Date:</span> 16 May - 19 July</p>
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS004</p>
+                                <p><span class="detail-label">Shuttle:</span> The Elegance</p>
+                                <p><span class="detail-label">Tags:</span> Saturn, Luxury, Gourmet</p>
+                                <p><span class="detail-label">Date:</span> 15 October-15 November</p>
+                            </div>
+                        </div>
                     </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<div class="flexRow">
-  <div class="flexRowItem">
-      <img src="../assets/images/flightMoon.png" height="609px" width=" 477px" >
-  </div>
-
-  <div class="flexRowItem">
-      <div class="flexCol">
-          <div class="flexColtem">
-              <h1>Moonlight Meander</h1>
-              <div class="ratings">
-                <p class="ratings">★★★★ </p>
-                <div class="separator"></div>
-                <p class="reviews"> 36 Customer Reviews</p>
+                </div>
             </div>
-              <h3>R 15,000.00</h3>            
+        </div>
+
+        <!-- Uranus Flight -->
+        <div class="flexRow" data-destination="Uranus" data-price="30000" data-tags="Commercial,Sale">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightUranus.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Uranus's Icy Wonders</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 25 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 30,000.00</span>
+                            <span class="discounted-price">R 45,000.00</span>
+                        </h3>
+                        <p>Take a commercial flight to Uranus and explore the icy wonders of this distant planet. Enjoy special sale prices on this once-in-a-lifetime adventure.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button">- 1 +</button>
+                            <button class="red-button" name="button" type="button">Book Now</button>
+
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS005</p>
+                                <p><span class="detail-label">Shuttle:</span> The Icebreaker</p>
+                                <p><span class="detail-label">Tags:</span> Uranus, Commercial, Sale</p>
+                                <p><span class="detail-label">Date:</span> 1 December-31 December</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Moon Flight -->
+        <div class="flexRow" data-destination="Moon" data-price="15000" data-tags="Adventure,Sale">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightMoon.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Moon's Tranquil Journey</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 50 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 15,000.00</span>
+                            <span class="discounted-price">R 25,000.00</span>
+                        </h3>
+                        <p>Embark on a tranquil journey to the Moon. Perfect for adventurers looking for a serene getaway. Take advantage of our special sale prices for a memorable experience.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button">- 1 +</button>
+                            <button class="red-button" name="button" type="button">Book Now</button>
+
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS006</p>
+                                <p><span class="detail-label">Shuttle:</span> The Tranquility</p>
+                                <p><span class="detail-label">Tags:</span> Moon, Adventure, Sale</p>
+                                <p><span class="detail-label">Date:</span> 1 January-15 February</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterForm = document.getElementById('filterForm');
+        const flightsContainer = document.getElementById('flightsContainer');
+    
+        filterForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+            const destination = document.getElementById('destination').value;
+            const priceRange = document.getElementById('priceRange').value;
+            const tags = document.getElementById('tags').value;
+    
+            const flights = flightsContainer.getElementsByClassName('flexRow');
             
-              <p>Experience the ultimate lunar getaway with our "Moonlight Meander" 
-                package. Depart Earths atmosphere aboard the "Celestial Cruiser" for a 
-                short but unforgettable journey to the Moon. Enjoy lunar walks, 
-                breathtaking views of Earthrise, and stargazing under the moons serene 
-                glow. Immerse yourself in luxury accommodations amidst the tranquility 
-                of space.</p>
-                <div class="flexColItem">
-                    <button class="purple-button" name="button" type="button">- 1 +</button>
-                    <button class="red-button" name="button" type="button">Book Now</button>
-
-                    <div class="line"></div>
-
-                    <div class="details">
-                        <p><span class="detail-label">SKU:</span> SS451</p>
-                        <p><span class="detail-label">Shuttle:</span> The Voyager</p>
-                        <p><span class="detail-label">Tags:</span> Moon,Commercial,Romantic</p>
-                        <p><span class="detail-label">Date:</span> 5 August - 12 August</p>
-                        
-                    </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-</div>
-
-
-<!-- View Cart Button -->
-<button class="view-cart-btn" onclick="openModal()">View Cart</button>
-
-<!-- Modal Structure -->
-<div id="cartModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>Your Cart</h2>
-            <span class="close" onclick="closeModal()">&times;</span>
-        </div>
-        <div class="modal-body">
-            <div class="cart-item">
-                <span>Moonlight Meander</span>
-                <input type="number" value="1" class="item-quantity" onchange="updateTotal()">
-                <span class="item-price">R 15,000.00</span>
-            </div>
-            <div class="cart-item">
-                <span>Mars Adventure</span>
-                <input type="number" value="1" class="item-quantity" onchange="updateTotal()">
-                <span class="item-price">R 20,000.00</span>
-            </div>
-            <div class="cart-item">
-                <span>Venus Voyage</span>
-                <input type="number" value="1" class="item-quantity" onchange="updateTotal()">
-                <span class="item-price">R 25,000.00</span>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <h3>Total: <span id="cartTotal">R 60,000.00</span></h3>
-            <button class="purple-button" onclick="closeModal()">Continue Shopping</button>
-            <button class="red-button" onclick="checkout()">Check Out</button>
-        </div>
-    </div>
-</div>
+            Array.from(flights).forEach(flight => {
+                const flightDestination = flight.getAttribute('data-destination');
+                const flightPrice = parseFloat(flight.getAttribute('data-price'));
+                const flightTags = flight.getAttribute('data-tags').split(',');
+    
+                let showFlight = true;
+    
+                if (destination && flightDestination !== destination) {
+                    showFlight = false;
+                }
+    
+                if (priceRange) {
+                    const [minPrice, maxPrice] = priceRange.split('-').map(Number);
+                    if (flightPrice < minPrice || flightPrice > maxPrice) {
+                        showFlight = false;
+                    }
+                }
+    
+                if (tags && !flightTags.includes(tags)) {
+                    showFlight = false;
+                }
+    
+                flight.style.display = showFlight ? 'flex' : 'none';
+            });
+        });
+    
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+    
+        searchForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            const flights = flightsContainer.getElementsByClassName('flexRow');
+            
+            Array.from(flights).forEach(flight => {
+                const flightTitle = flight.querySelector('h1').innerText.toLowerCase();
+                const flightDescription = flight.querySelector('p').innerText.toLowerCase();
+                
+                if (flightTitle.includes(searchTerm) || flightDescription.includes(searchTerm)) {
+                    flight.style.display = 'flex';
+                } else {
+                    flight.style.display = 'none';
+                }
+            });
+        });
+    });
+  </script>  
 
 <footer>
     <div class="column left-column">
-        <img src="../assets/images/logo.png" alt="Image" height="500px" width=" 400px" >
+        <img src="..//assets/images/logo.png" alt="Image" height="487" width="609">
         <p>Offering unforgettable trips to explore planets in our solar system.</p>
     </div>
+
     <div class="column">
         <h1>Company</h1>
         <br>
         <p>Home</p>
+        <p>About</p>
         <p>Flights</p>
         <p>Contact Us</p>
     </div>
+
     <div class="column right-column">
         <p>Social Media Links</p>
         <div class="images">
-            <img src="../assets/images/smFacebook.png" height="77px" width="77px">
-            <img src="../assets/images/smX.png" height="77px" width="77px">
-            <img src="../assets/images/smTicktock.png" height="77px" width="77px">
-            <img src="../assets/images/smInstagram.png" height="77px" width="77px">
+            <img src="..//assets/images/smFacebook.png" height="60" width="60">
+            <img src="..//assets/images/smX.png" height="60" width="60">
+            <img src="..//assets/images/smTicktock.png" height="60" width="60">
+            <img src="..//assets/images/smInstagram.png" height="60" width="60">
         </div>
     </div>
-    <div class="column right-column">
-        <p>All Rights Reserved @ Open Window 2024</p>
-        <p>Terms & Conditions | Privacy & Policy</p>
+
+    <div class="bottom-footer">
+        <p>All rights reserved. &copy; Open Windows 2024 </p>
     </div>
 </footer>
-
-<script>
-    function openModal() {
-        document.getElementById('cartModal').style.display = 'flex';
-        updateTotal();
-    }
-
-    function closeModal() {
-        document.getElementById('cartModal').style.display = 'none';
-    }
-
-    function updateTotal() {
-        const cartItems = document.querySelectorAll('.cart-item');
-        let total = 0;
-        cartItems.forEach(item => {
-            const price = parseFloat(item.querySelector('.item-price').textContent.replace('R', ''));
-            const quantity = parseInt(item.querySelector('.item-quantity').value);
-            total += price * quantity;
-        });
-        document.getElementById('cartTotal').textContent = 'R ' + total.toFixed(2);
-    }
-
-   
+</footer>
     
-
-
-    document.getElementById('searchForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-        var searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-        if (searchQuery !== "") {
-            // Remove previous highlights
-            removeHighlights();
-            // Highlight new search terms
-            highlightSearchResults(searchQuery);
-        } else {
-            alert('Please enter a search term');
-        }
-    });
-
-    function removeHighlights() {
-        var highlightedElements = document.querySelectorAll('.highlight');
-        highlightedElements.forEach(function(element) {
-            element.classList.remove('highlight');
-            element.innerHTML = element.textContent; // Remove spans
-        });
-    }
-
-    function highlightSearchResults(searchQuery) {
-        var elements = document.querySelectorAll('h1, h3, p, div'); // Add more selectors if needed
-        elements.forEach(function(element) {
-            var innerHTML = element.innerHTML.toLowerCase();
-            if (innerHTML.includes(searchQuery)) {
-                var regex = new RegExp('(' + searchQuery + ')', 'gi');
-                element.innerHTML = element.innerHTML.replace(regex, '<span class="highlight">$1</span>');
-            }
-        });
-    }
-</script>
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
