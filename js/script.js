@@ -63,3 +63,68 @@ function highlightSearchResults(searchQuery) {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cart = {};
+    const flightsContainer = document.getElementById('flightsContainer');
+    const cartModal = document.getElementById('cartModal');
+    const cartItemsContainer = document.getElementById('cartItems');
+    const totalPriceElement = document.getElementById('totalPrice');
+    const viewCartBtn = document.getElementById('viewCartBtn');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    flightsContainer.addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON' && event.target.classList.contains('red-button')) {
+            const flightDiv = event.target.closest('.flexRow');
+            const destination = flightDiv.getAttribute('data-destination');
+            const price = parseFloat(flightDiv.getAttribute('data-price'));
+
+            if (!cart[destination]) {
+                cart[destination] = { price: price, quantity: 0 };
+            }
+
+            cart[destination].quantity++;
+            updateCart();
+        }
+    });
+
+    viewCartBtn.addEventListener('click', () => {
+        cartModal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        cartModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === cartModal) {
+            cartModal.style.display = 'none';
+        }
+    });
+
+    function updateCart() {
+        cartItemsContainer.innerHTML = '';
+
+        let total = 0;
+
+        for (const destination in cart) {
+            const item = cart[destination];
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+
+            const itemDetails = `
+                <p>${destination}</p>
+                <p>Price: R ${item.price.toFixed(2)}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <p>Total: R ${itemTotal.toFixed(2)}</p>
+            `;
+            cartItem.innerHTML = itemDetails;
+            cartItemsContainer.appendChild(cartItem);
+        }
+
+        totalPriceElement.innerText = total.toFixed(2);
+    }
+});

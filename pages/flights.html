@@ -95,6 +95,33 @@
             </div>
         </nav>
     </div>
+    <button id="viewCartBtn">View Cart</button>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <table id="cartTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Cart items will be dynamically added here -->
+                </tbody>
+            </table>
+            <p id="cartTotal">Total: $0.00</p>
+            <button id="continueShoppingBtn">Continue Shopping</button>
+            <button id="checkoutBtn">Check Out</button>
+        </div>
+    </div>
+
+
 
     <!-- Product Sections -->
     <div id="flightsContainer">
@@ -325,6 +352,263 @@
 
     </div>
 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Cart Modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Product Sections -->
+    <div id="flightsContainer">
+        <!-- Mars Flight -->
+        <div class="flexRow" data-destination="Mars" data-price="25000" data-tags="Luxury,Sale">
+            <div class="flexRowItem">
+                <img src="../assets/images/flighhtMars.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>The Classic Mars Experience</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 36 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 25,000.00</span>
+                            <span class="discounted-price">R 50,000.00</span>
+                        </h3>
+                        <p>Embark on a Mars vacation; red deserts, ancient relics, and towering 
+                            canyons await. Enjoy low-gravity hiking, roving trips to Olympus Mons, and
+                            stargazing under Phobos and Deimos. Unforgettable adventures beckon 
+                            on the rust coloured landscapes of the Red Planet.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button" data-destination="Mars">- 1 +</button>
+                            <button class="red-button" name="button" type="button" data-destination="Mars">Book Now</button>
+
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS001</p>
+                                <p><span class="detail-label">Shuttle:</span> The Opulence</p>
+                                <p><span class="detail-label">Tags:</span> Mars, Luxury, Sale</p>
+                                <p><span class="detail-label">Date:</span> 16 June-19 July</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Neptune Flight -->
+        <div class="flexRow" data-destination="Neptune" data-price="40000" data-tags="Adventure,Romantic">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightNeptune.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Neptune's Deep Blue Voyage</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 28 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 40,000.00</span>
+                            <span class="discounted-price">R 55,000.00</span>
+                        </h3>
+                        <p>Explore the mysteries of Neptune with an exhilarating journey through its icy rings and majestic blue atmosphere. Perfect for adventure seekers and romantic escapades.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button" data-destination="Neptune">- 1 +</button>
+                            <button class="red-button" name="button" type="button" data-destination="Neptune">Book Now</button>
+
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS002</p>
+                                <p><span class="detail-label">Shuttle:</span> The Voyager</p>
+                                <p><span class="detail-label">Tags:</span> Neptune, Adventure, Romantic</p>
+                                <p><span class="detail-label">Date:</span> 10 August-15 September</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jupiter Flight -->
+        <div class="flexRow" data-destination="Jupiter" data-price="35000" data-tags="Commercial,Adventure">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightJupiter.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Jupiter's Giant Adventure</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 32 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 35,000.00</span>
+                            <span class="discounted-price">R 45,000.00</span>
+                        </h3>
+                        <p>Take a commercial flight to Jupiter and witness the grandeur of the largest planet in our solar system. This adventure includes flybys of the Great Red Spot and visits to its many moons.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button" data-destination="Jupiter">- 1 +</button>
+                            <button class="red-button" name="button" type="button" data-destination="Jupiter">Book Now</button>
+
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS003</p>
+                                <p><span class="detail-label">Shuttle:</span> The Titan</p>
+                                <p><span class="detail-label">Tags:</span> Jupiter, Commercial, Adventure</p>
+                                <p><span class="detail-label">Date:</span> 1 September-30 October</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Saturn Flight -->
+        <div class="flexRow" data-destination="Saturn" data-price="45000" data-tags="Luxury,Gourmet">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightSaturn.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Saturn's Ringed Splendor</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 40 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 45,000.00</span>
+                            <span class="discounted-price">R 60,000.00</span>
+                        </h3>
+                        <p>Experience the luxury of Saturn's spectacular rings and indulge in gourmet dining aboard our state-of-the-art shuttle. A perfect blend of elegance and exploration.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button" data-destination="Saturn">- 1 +</button>
+                            <button class="red-button" name="button" type="button" data-destination="Saturn">Book Now</button>
+
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS004</p>
+                                <p><span class="detail-label">Shuttle:</span> The Elegance</p>
+                                <p><span class="detail-label">Tags:</span> Saturn, Luxury, Gourmet</p>
+                                <p><span class="detail-label">Date:</span> 15 October-15 November</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Uranus Flight -->
+        <div class="flexRow" data-destination="Uranus" data-price="30000" data-tags="Commercial,Sale">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightUranus.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Uranus's Icy Wonders</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 25 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 30,000.00</span>
+                            <span class="discounted-price">R 45,000.00</span>
+                        </h3>
+                        <p>Take a commercial flight to Uranus and explore the icy wonders of this distant planet. Enjoy special sale prices on this once-in-a-lifetime adventure.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button" data-destination="Uranus">- 1 +</button>
+                            <button class="red-button" name="button" type="button" data-destination="Uranus">Book Now</button>
+
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS005</p>
+                                <p><span class="detail-label">Shuttle:</span> The Icebreaker</p>
+                                <p><span class="detail-label">Tags:</span> Uranus, Commercial, Sale</p>
+                                <p><span class="detail-label">Date:</span> 1 December-31 December</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Moon Flight -->
+        <div class="flexRow" data-destination="Moon" data-price="15000" data-tags="Adventure,Sale">
+            <div class="flexRowItem">
+                <img src="../assets/images/flightMoon.png" height="609px" width="477px">
+            </div>
+            <div class="flexRowItem">
+                <div class="flexCol">
+                    <div class="flexColtem">
+                        <h1>Moon's Tranquil Journey</h1>
+                        <div class="ratings">
+                            <p class="ratings">★★★★☆ </p>
+                            <div class="separator"></div>
+                            <p class="reviews"> 50 Customer Reviews</p>
+                        </div>
+                        <h3>
+                            <span class="price">R 15,000.00</span>
+                            <span class="discounted-price">R 25,000.00</span>
+                        </h3>
+                        <p>Embark on a tranquil journey to the Moon. Perfect for adventurers looking for a serene getaway. Take advantage of our special sale prices for a memorable experience.</p>
+                        <div class="flexColItem">
+                            <button class="purple-button" name="button" type="button" data-destination="Moon">- 1 +</button>
+                            <button class="red-button" name="button" type="button" data-destination="Moon">Book Now</button>
+
+                            <div class="line"></div>
+
+                            <div class="details">
+                                <p><span class="detail-label">SKU:</span> SS006</p>
+                                <p><span class="detail-label">Shuttle:</span> The Tranquility</p>
+                                <p><span class="detail-label">Tags:</span> Moon, Adventure, Sale</p>
+                                <p><span class="detail-label">Date:</span> 1 January-15 February</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- View Cart Button -->
+    <button id="viewCartBtn">View Cart</button>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <h3>Total: R <span id="totalPrice">0</span></h3>
+            <button id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const filterForm = document.getElementById('filterForm');
@@ -387,7 +671,152 @@
             });
         });
     });
+
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const viewCartBtn = document.getElementById('viewCartBtn');
+    const cartModal = document.getElementById('cartModal');
+    const closeModal = document.querySelector('.close');
+    const continueShoppingBtn = document.getElementById('continueShoppingBtn');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const cartTableBody = document.querySelector('#cartTable tbody');
+    const cartTotal = document.getElementById('cartTotal');
+
+    let cartItems = [
+        { item: 'Item 1', quantity: 1, price: 10.00 },
+        { item: 'Item 2', quantity: 2, price: 15.00 }
+    ];
+
+    viewCartBtn.addEventListener('click', function() {
+        updateCartTable();
+        cartModal.style.display = 'block';
+    });
+
+    closeModal.addEventListener('click', function() {
+        cartModal.style.display = 'none';
+    });
+
+    continueShoppingBtn.addEventListener('click', function() {
+        cartModal.style.display = 'none';
+    });
+
+    checkoutBtn.addEventListener('click', function() {
+        window.location.href = 'index.html'; // Change to your home page URL
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == cartModal) {
+            cartModal.style.display = 'none';
+        }
+    });
+
+    function updateCartTable() {
+        cartTableBody.innerHTML = '';
+        let total = 0;
+        cartItems.forEach((item, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.item}</td>
+                <td><input type="number" value="${item.quantity}" min="1" data-index="${index}" class="quantity-input"></td>
+                <td>$${item.price.toFixed(2)}</td>
+                <td>$${(item.quantity * item.price).toFixed(2)}</td>
+                <td><button class="remove-btn" data-index="${index}">Remove</button></td>
+            `;
+            cartTableBody.appendChild(row);
+            total += item.quantity * item.price;
+        });
+        cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+
+        document.querySelectorAll('.quantity-input').forEach(input => {
+            input.addEventListener('change', function() {
+                const index = this.dataset.index;
+                cartItems[index].quantity = parseInt(this.value);
+                updateCartTable();
+            });
+        });
+
+        document.querySelectorAll('.remove-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const index = this.dataset.index;
+                cartItems.splice(index, 1);
+                updateCartTable();
+            });
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cart = {};
+    const flightsContainer = document.getElementById('flightsContainer');
+    const cartModal = document.getElementById('cartModal');
+    const cartItemsContainer = document.getElementById('cartItems');
+    const totalPriceElement = document.getElementById('totalPrice');
+    const viewCartBtn = document.getElementById('viewCartBtn');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    flightsContainer.addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON' && event.target.classList.contains('red-button')) {
+            const flightDiv = event.target.closest('.flexRow');
+            const destination = flightDiv.getAttribute('data-destination');
+            const price = parseFloat(flightDiv.getAttribute('data-price'));
+
+            if (!cart[destination]) {
+                cart[destination] = { price: price, quantity: 0 };
+            }
+
+            cart[destination].quantity++;
+            updateCart();
+        }
+    });
+
+    viewCartBtn.addEventListener('click', () => {
+        cartModal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        cartModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === cartModal) {
+            cartModal.style.display = 'none';
+        }
+    });
+
+    function updateCart() {
+        cartItemsContainer.innerHTML = '';
+
+        let total = 0;
+
+        for (const destination in cart) {
+            const item = cart[destination];
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+
+            const itemDetails = `
+                <p>${destination}</p>
+                <p>Price: R ${item.price.toFixed(2)}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <p>Total: R ${itemTotal.toFixed(2)}</p>
+            `;
+            cartItem.innerHTML = itemDetails;
+            cartItemsContainer.appendChild(cartItem);
+        }
+
+        totalPriceElement.innerText = total.toFixed(2);
+    }
+});
+
+
   </script>  
+
+
+
 
 <footer>
     <div class="column left-column">
